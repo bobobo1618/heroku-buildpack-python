@@ -1,0 +1,9 @@
+build/
+dist/
+docs/_build/
+pip.egg-info/
+MANIFEST
+.tox
+*.egg
+*.py[cod]
+*.~
