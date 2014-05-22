@@ -27,7 +27,7 @@ PROFILE_PATH="$BUILD_DIR/.profile.d/python.sh"
 
 DEFAULT_PYTHON_VERSION="python-2.7.6"
 PYTHON_EXE="$BUILD_DIR/.heroku/python/bin/python"
-PIP_VERSION="1.5.4"
+PIP_VERSION="1.5.6"
 SETUPTOOLS_VERSION="2.1"
 
 LOGPLEX_KEY="t.b396af7f-ad75-4643-8b9e-ebb288acc624"
@@ -164,11 +164,11 @@ fi
 
 # Install dependencies with Pip.
 puts-step "Installing dependencies using Pip ($PIP_VERSION)"
-$BUILD_DIR/.heroku/python/bin/pip install -r requirements.txt --exists-action=w --src=./.heroku/src --allow-all-external  | cleanup | indent
+$BUILD_DIR/.heroku/python/bin/pip install -r requirements.txt --use-mirrors --exists-action=w --src=./.heroku/src --allow-all-external  | cleanup | indent
 
 
 # Django collectstatic support.
-  sub-env $BIN_DIR/steps/collectstatic
+sub-env $BIN_DIR/steps/collectstatic
 
 # ### Finalize
 #
